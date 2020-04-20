@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             Shell.NavBarIsVisible="False"
+             x:Class="ShellMvvmDemo.Views.HeroDetailView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="PageLabelStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <cake:PancakeView VerticalOptions="FillAndExpand" Grid.Row="6" Margin="0,0,0,0" 
+                          BackgroundGradientAngle="270" BackgroundGradientEndColor="#081F30" BackgroundGradientStartColor="#154E79" CornerRadius="0" HasShadow="False" >
+
+
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="5,5,5,5" RowSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+
+                <Label FontSize="Large" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" 
+                   Text="Hero Details" TextColor="White" VerticalOptions="CenterAndExpand"/>
+
+                <ImageButton Command="{Binding CloseCommand}" Source="back.png" HorizontalOptions="End" BackgroundColor="Transparent"  Margin="0,0,10,0"
+                         WidthRequest="24" HeightRequest="24"  />
+
+                <cake:PancakeView Grid.Row="1"  HorizontalOptions="Center" Margin="30,0,30,0" CornerRadius="10" HasShadow="True" BackgroundColor="Transparent">
+                    <Image Grid.Row="1" Source="{Binding CurrentHero.ImageName}" WidthRequest="300" Aspect="AspectFit" />
+                </cake:PancakeView>
+                
+                
+
+                <Label  Grid.Row="2" Text="{Binding CurrentHero.HeroName}" FontSize="40" Style="{StaticResource PageLabelStyle}"  TextColor="White" />
+                <Label  Grid.Row="3"  Text="{Binding CurrentHero.AboutHero}" FontSize="Medium" FontAttributes="Italic" Style="{StaticResource PageLabelStyle}" />
+            </Grid>
+            
+
+
+
+        </cake:PancakeView>
+    </ContentPage.Content>
+</ContentPage>

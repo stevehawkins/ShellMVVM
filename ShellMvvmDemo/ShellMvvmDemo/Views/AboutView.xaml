@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ShellMvvmDemo.Views.AboutView"
+             Shell.NavBarIsVisible="False"
+             xmlns:cake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             Title="{Binding Title}">
+    <cake:PancakeView VerticalOptions="FillAndExpand" Grid.Row="6" Margin="0,0,0,0" 
+                          BackgroundGradientAngle="270" BackgroundGradientEndColor="#081F30" BackgroundGradientStartColor="#154E79" CornerRadius="0" HasShadow="False" >
+
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+            <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="Shell (Complex object) MVVM Light Demo"  FontSize="Medium" TextColor="White" />
+            <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="By Steve Hawkins" FontSize="Medium" TextColor="White" />
+        </StackLayout>
+
+    </cake:PancakeView>
+</ContentPage>

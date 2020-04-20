@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             Shell.NavBarIsVisible="False"
+             x:Class="ShellMvvmDemo.Views.LoginView">
+    <ContentPage.Content>
+        <cake:PancakeView VerticalOptions="FillAndExpand"  Margin="0,0,0,0" 
+                          BackgroundGradientAngle="270" BackgroundGradientEndColor="#081F30" BackgroundGradientStartColor="#154E79" 
+                                        CornerRadius="0" HasShadow="False" >
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <BoxView BackgroundColor="Transparent" Grid.Row="0" HeightRequest="10"  />
+                <cake:PancakeView Grid.Row="1"  HorizontalOptions="Center" Margin="30,0,30,0" CornerRadius="10" HasShadow="True" BackgroundColor="Transparent">
+                    <Image Source="login.jpg" Aspect="AspectFit" HorizontalOptions="Center" Margin="0,0,0,0"/>
+                </cake:PancakeView>
+                
+                <Label Grid.Row="3" FontSize="Medium" Text="Email here" TextColor="White" />
+                <cake:PancakeView Grid.Row="4" Margin="0,0,0,0" BackgroundGradientAngle="270" BackgroundGradientEndColor="#203444" BackgroundGradientStartColor="#3A5E7A" 
+                                         CornerRadius="10" HasShadow="False" HeightRequest="40">
+                    <Entry   TextColor="White" Placeholder="Email" PlaceholderColor="LightGray"   FontSize="Small" />
+                </cake:PancakeView>
+                <Label Grid.Row="5" FontSize="Medium" Text="Password"  TextColor="White" />
+
+                <cake:PancakeView Grid.Row="6" Margin="0,0,0,0" BackgroundGradientAngle="270" BackgroundGradientEndColor="#203444" BackgroundGradientStartColor="#3A5E7A" 
+                                        CornerRadius="10" HasShadow="False" HeightRequest="40">
+                    <Entry IsPassword="True"  TextColor="White" Placeholder="Password here" PlaceholderColor="LightGray"  FontSize="Small"  />
+                </cake:PancakeView>
+                <Label Grid.Row="7" HorizontalTextAlignment="End" Text="Forgot Password?" TextColor="White" />
+
+                <cake:PancakeView Grid.Row="8" Margin="0,20,0,0" BackgroundGradientAngle="270" BackgroundGradientEndColor="#122635" BackgroundGradientStartColor="#2E4B61"
+                        CornerRadius="10" HasShadow="False" HeightRequest="60" BorderColor="Gray" BorderThickness="1">
+                    <Label FontSize="Medium" Text="Tap To Login" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                    <cake:PancakeView.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LoginCommand}" />
+                    </cake:PancakeView.GestureRecognizers>
+                </cake:PancakeView>
+
+                <StackLayout Grid.Row="10" Margin="0,10,0,20" Padding="0" HorizontalOptions="Center" Orientation="Horizontal">
+                    <Label Text="You don't have any account? " TextColor="White"/>
+                    <Label Text="Register" TextColor="#F92B7F" />
+                </StackLayout>
+
+            </Grid>
+        </cake:PancakeView>
+    </ContentPage.Content>
+</ContentPage>
